@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="fileLogging" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/commu.log" />
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="BufferSize" value="8192" />
+        <param name="ImmediateFlush" value="false" />
+        <param name="BufferedIO" value="true" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}]-[%p]-[%t]-%C{1}[%L]     %m%n" />
+        </layout>
+
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info" />
+            <param name="levelMax" value="fatal" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+    <appender name="consoleLogging" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}]-[%p]-[%t]-%C{1}[%L]     %m%n" />
+        </layout>
+
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="levelMin" value="info" />
+            <param name="levelMax" value="fatal" />
+            <param name="AcceptOnMatch" value="true" />
+        </filter>
+    </appender>
+
+    <root>
+        <priority value ="debug" />
+        <!--
+         priority : all, debug, info, warn, error, fatal
+        -->
+        <appender-ref ref="fileLogging" />
+        <appender-ref ref="consoleLogging" />
+    </root>
+</log4j:configuration>

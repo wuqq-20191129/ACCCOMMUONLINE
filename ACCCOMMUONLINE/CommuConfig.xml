@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<Common>
+		<!-- linux config -->
+		<!--<BackUpLog>/root/acc/charge/log</BackUpLog>-->
+		<BackUpLog>D:\VSS_WLMQ\5多元支付系统\ACCCOMMUONLINE\log</BackUpLog>
+		<!--Socket config -->
+		<ServerIp>172.20.16.21</ServerIp>
+                <!--<ServerIp>10.99.10.50</ServerIp>-->
+		<ServerPort>8</ServerPort>
+                <KeyVersion>2</KeyVersion>
+                <!-- 激活有效期内24小时 -->
+		<EffectiveDate>1440</EffectiveDate>
+		<Port>6001</Port>
+		<KeyVersion>3000</KeyVersion>
+		<ReadOneMessageTimeOut>3000</ReadOneMessageTimeOut>
+		<MessageQueueThreadSleepTime>10000</MessageQueueThreadSleepTime>
+
+		<!--APP config -->
+		<MessageClassPrefix>com.goldsign.commu.app.message.Message
+		</MessageClassPrefix>
+		<SendQueryWait>50</SendQueryWait>
+		<MonitorRefresh>5000</MonitorRefresh>
+
+		<!--control whether console print true :print false:not print -->
+		<ConsolePrint>true</ConsolePrint>
+		<ConsolePrintFrequency>1</ConsolePrintFrequency>
+		<ReadWithThread>false</ReadWithThread>
+		<GetMessageFrequency>16</GetMessageFrequency>
+
+		<StartSocketListener>true</StartSocketListener>
+		<StartConnectionPoolListener>true</StartConnectionPoolListener>
+		<!-- 更新合法设备时间 -->
+		<UpdateDevInfoTime>0300</UpdateDevInfoTime>
+		
+		<!--客流消息最大滞留时间 -1:不限制 -->
+		<TrafficDelayMaxDay>-1</TrafficDelayMaxDay>
+		<!--杀死线程,等候资源释放最大的次数,每次1秒 -->
+		<ThreadReleaseResourceWaitCount>5</ThreadReleaseResourceWaitCount>
+	</Common>
+
+
+	<OLConnectionPool>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@172.20.19.29:1521:wacc</URL>
+		<User encrypt="true">30102D2730162822182E3C34</User>
+		<Password encrypt="true">30102D2730162822182E3C34</Password>
+		<MaxActive>40</MaxActive>
+		<MaxIdle>20</MaxIdle>
+		<MaxWait>20000</MaxWait>
+	</OLConnectionPool>
+
+	<STConnectionPool>
+		<Driver>oracle.jdbc.driver.OracleDriver</Driver>
+		<URL>jdbc:oracle:thin:@172.20.19.29:1521:wacc</URL>
+		<User encrypt="true">30102D273016343A182E3C34</User>
+		<Password encrypt="true">30102D273016343A182E3C34</Password>
+		<MaxActive>40</MaxActive>
+		<MaxIdle>20</MaxIdle>
+		<MaxWait>20000</MaxWait>
+	</STConnectionPool>
+       
+
+        <!--<OLConnectionPool>-->
+		<!--<Driver>oracle.jdbc.driver.OracleDriver</Driver>-->
+		<!--<URL>jdbc:oracle:thin:@10.99.11.81:1521:wacctstdb</URL>-->
+		<!--<User encrypt="true">30102D2730162822182E3C34</User>-->
+		<!--<Password encrypt="true">30102D2730162822182E3C34</Password>-->
+		<!--<MaxActive>40</MaxActive>-->
+		<!--<MaxIdle>20</MaxIdle>-->
+		<!--<MaxWait>20000</MaxWait>-->
+	<!--</OLConnectionPool>-->
+
+	<!--<STConnectionPool>-->
+		<!--<Driver>oracle.jdbc.driver.OracleDriver</Driver>-->
+		<!--<URL>jdbc:oracle:thin:@10.99.11.81:1521:wacctstdb</URL>-->
+		<!--<User encrypt="true">30102D273016343A182E3C34</User>-->
+		<!--<Password encrypt="true">30102D273016343A182E3C34</Password>-->
+		<!--<MaxActive>40</MaxActive>-->
+		<!--<MaxIdle>20</MaxIdle>-->
+		<!--<MaxWait>20000</MaxWait>-->
+	<!--</STConnectionPool>-->
+
+        
+	<CommunicationThreadPool>
+		<MaxThreadNumber>12</MaxThreadNumber>
+		<ThreadSleepTime>100</ThreadSleepTime>
+		<ThreadPriorityAdd>0</ThreadPriorityAdd>
+		<ReadThreadPriorityAdd>2</ReadThreadPriorityAdd>
+		<MaxSearchNum>2</MaxSearchNum>
+		<!--<UnHanledMsgLogDir>/home/acc/charge/log</UnHanledMsgLogDir>-->
+		 <UnHanledMsgLogDir>D:\VSS_WLMQ\5多元支付系统\ACCCOMMUONLINE\log</UnHanledMsgLogDir>
+		<ThreadBufferCapacity>10000</ThreadBufferCapacity>
+		<ThreadBufferIncrement>1000</ThreadBufferIncrement>
+		<PriorityThreadBufferCapacity>2000</PriorityThreadBufferCapacity>
+		<PriorityThreadBufferIncrement>1000</PriorityThreadBufferIncrement>
+	</CommunicationThreadPool>
+
+	<ConnectionPoolListenerThread>
+		<CPListenerThreadSleepTime>1000</CPListenerThreadSleepTime>
+		<TestSql>select 1 from dual</TestSql>
+		<SqlMsghandleSleepTime>100</SqlMsghandleSleepTime>
+	</ConnectionPoolListenerThread>
+
+	<ThreadPoolMonitor>
+		<!--线程池监控时间间隔 -->
+		<TPMonitorThreadSleepTime>1000</TPMonitorThreadSleepTime>
+		<!--消息处理允许的最大挂起数 -->
+		<ThreadMsgHandUpMaxNumberAllow>15</ThreadMsgHandUpMaxNumberAllow>
+		<!--消息解释类前缀 -->
+		<ThreadMsgAnalyzeClassPrefix>com.goldsign.commu.app.message.AnalyzeMessage
+		</ThreadMsgAnalyzeClassPrefix>
+	</ThreadPoolMonitor>
+</Config>

@@ -1,0 +1,18 @@
+一、配置Java.security
+用记事本打开%JDK_Home%\ jre\lib\security\java.security文件，找到如下9行代码：
+security.provider.1=sun.security.provider.Sun
+security.provider.2=sun.security.rsa.SunRsaSign
+security.provider.3=com.sun.net.ssl.internal.ssl.Provider
+security.provider.4=com.sun.crypto.provider.SunJCE
+security.provider.5=sun.security.jgss.SunProvider
+security.provider.6=com.sun.security.sasl.Provider
+security.provider.7=org.jcp.xml.dsig.internal.dom.XMLDSigRI
+security.provider.8=sun.security.smartcardio.SunPCSC
+security.provider.9=sun.security.mscapi.SunMSCAPI
+在这9行之后添加如下两行代码：
+#增加BouncyCastleProvider
+security.provider.10=org.bouncycastle.jce.provider.BouncyCastleProvider
+保存Java.security文件。
+
+二、导入jar文件
+分别复制bcprov-ext-jdk16-146.jar到"%JDK_Home%\jre\lib\ext"目录下。

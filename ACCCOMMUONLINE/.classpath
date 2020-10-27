@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/db/commons-collections.jar"/>
+	<classpathentry kind="lib" path="lib/db/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/db/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/db/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/db/commons-net-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/db/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/goldsign/GoldsignLibDB.jar"/>
+	<classpathentry kind="lib" path="lib/jms/jms.jar"/>
+	<classpathentry kind="lib" path="lib/log/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/oracle/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="lib/util/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/xml/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/xml/xerces.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
